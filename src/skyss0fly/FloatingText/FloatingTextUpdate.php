@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace ElectroGames\FloatingText;
+namespace skyss0fly\FloatingText;
 
 use pocketmine\math\Vector3;
 use pocketmine\scheduler\Task;
