@@ -6,6 +6,7 @@ namespace skyss0fly\FloatingText;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use pocketmine\math\Vector3;
+use pocketmine\world\WorldManager;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\world\particle\FloatingTextParticle;
