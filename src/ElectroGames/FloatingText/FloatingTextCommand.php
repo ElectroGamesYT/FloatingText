@@ -8,7 +8,7 @@ use pocketmine\plugin\Plugin;
 use pocketmine\math\Vector3;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\level\particle\FloatingTextParticle;
+use pocketmine\world\particle\FloatingTextParticle;
 use pocketmine\utils\TextFormat as TF;
 
 class FloatingTextCommand extends Command {
@@ -85,7 +85,7 @@ class FloatingTextCommand extends Command {
                             "x" => $sender->getX(),
                             "y" => $sender->getY(),
                             "z" => $sender->getZ(),
-                            "level" => $sender->getLevel()->getFolderName(),
+                            "level" => $sender->getWorld()->getWorldByName(),
                             "text" => $texts[$args[2]]
                         );
                         $this->getPlugin()->getFloatingTexts()->setNested("$id", $info);
@@ -121,7 +121,7 @@ class FloatingTextCommand extends Command {
                     $sender->sendMessage(TF::RED . "FloatingText with ID " . TF::YELLOW . $args[1] . TF::RED . " does not exist");
                     return false;
                 }
-                $level = $this->getPlugin()->getServer()->getLevelByName($this->getPlugin()->getFloatingTexts()->getNested("$args[1].level"));
+                $level = $this->getPlugin()->getServer()->getWorldByName($this->getPlugin()->getFloatingTexts()->getNested("$args[1].level"));
                 $ft = $this->getPlugin()->floatingTexts[$args[1]];
                 $ft->setText("");
                 $level->addParticle($ft);
@@ -147,7 +147,7 @@ class FloatingTextCommand extends Command {
                 $this->getPlugin()->getFloatingTexts()->setNested("$args[1].y", $sender->getY());
                 $this->getPlugin()->getFloatingTexts()->setNested("$args[1].z", $sender->getZ());
                 $this->getPlugin()->getFloatingTexts()->save();
-                $level = $this->getPlugin()->getServer()->getLevelByName($this->getPlugin()->getFloatingTexts()->getNested("$args[1].level"));
+                $level = $this->getPlugin()->getServer()->getWorldByName($this->getPlugin()->getFloatingTexts()->getNested("$args[1].level"));
                 $ft = $this->getPlugin()->floatingTexts[$args[1]];
                 $ft->setText("");
                 $level->addParticle($ft);
