@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace skyss0fly\FloatingText;
 
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\plugin\Plugin;
 use pocketmine\math\Vector3;
 use pocketmine\command\Command;
