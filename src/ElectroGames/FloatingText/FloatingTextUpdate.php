@@ -6,7 +6,7 @@ namespace ElectroGames\FloatingText;
 use pocketmine\math\Vector3;
 use pocketmine\scheduler\Task;
 use pocketmine\utils\TextFormat as TF;
-use pocketmine\level\particle\FloatingTextParticle;
+use pocketmine\world\particle\FloatingTextParticle;
 
 class FloatingTextUpdate extends Task {
 
@@ -28,7 +28,7 @@ class FloatingTextUpdate extends Task {
         foreach($this->getPlugin()->getServer()->getOnlinePlayers() as $player) {
             foreach($this->getPlugin()->floatingTexts as $id => $ft) {
                 $text = $this->getPlugin()->getFloatingTexts()->getNested("$id.text");
-                $level = $this->getPlugin()->getServer()->getLevelByName($this->getPlugin()->getFloatingTexts()->getNested("$id.level"));
+                $level = $this->getPlugin()->getServer()->getWorldByName($this->getPlugin()->getFloatingTexts()->getNested("$id.level"));
                 if($player->hasPermission("ft.command.admin")) {
                     $ft->setText($this->getPlugin()->replaceProcess($player, $text) . TF::EOL . TF::YELLOW . "ID: " . $id);
                 }else{
