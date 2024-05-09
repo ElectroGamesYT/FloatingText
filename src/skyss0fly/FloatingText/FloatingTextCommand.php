@@ -60,10 +60,10 @@ class FloatingTextCommand extends Command {
                         }
                         $id = rand(1, 1000000) + rand(1, 1000000);
                         $info = array(
-                            "x" => $sender->getX(),
-                            "y" => $sender->getY(),
-                            "z" => $sender->getZ(),
-                            "level" => $sender->getLevel()->getFolderName(),
+                            "x" => $sender->getPosition()->getX(),
+                            "y" => $sender->getPosition()->getY(),
+                            "z" => $sender->getPosition()->getZ(),
+                            "level" => $sender->getWorld()->getFolderName(),
                             "text" => implode(" ", array_slice($args, 2))
                         );
                         $this->getPlugin()->getFloatingTexts()->setNested("$id", $info);
@@ -82,9 +82,9 @@ class FloatingTextCommand extends Command {
                         }
                         $id = rand(1, 1000000) + rand(1, 1000000);
                         $info = array(
-                            "x" => $sender->getX(),
-                            "y" => $sender->getY(),
-                            "z" => $sender->getZ(),
+                            "x" => $sender->getPosition()->getX(),
+                            "y" => $sender->getPosition()->getY(),
+                            "z" => $sender->getPosition()->getZ(),
                             "level" => $sender->getWorld()->getWorldByName(),
                             "text" => $texts[$args[2]]
                         );
