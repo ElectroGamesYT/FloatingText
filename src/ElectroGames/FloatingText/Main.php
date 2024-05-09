@@ -8,7 +8,7 @@ use pocketmine\utils\Config;
 use pocketmine\math\Vector3;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
-use pocketmine\level\particle\FloatingTextParticle;
+use pocketmine\world\particle\FloatingTextParticle;
 
 class Main extends PluginBase {
 
