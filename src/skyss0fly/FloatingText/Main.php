@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace ElectroGames\FloatingText;
+namespace skyss0fly\FloatingText;
 
 use pocketmine\Player;
 use pocketmine\utils\Config;
