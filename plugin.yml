@@ -1,14 +1,12 @@
 name: FloatingText
-author: ElectroGames
-version: 1.0.0
-api: 3.0.0
-main: ElectroGames\FloatingText\Main
+author: [ElectroGames, skyss0fly]
+version: 1.1.0
+api: 5.0.0
+main: skyss0fly\FloatingText\Main
 description: Add FloatingTexts to your server
 
 permissions:
-  ft:
-    children:
-     ft.command:
-      children:
-          ft.command.admin:
-            default: op
+  ft.command:
+  default: op
+  ft.command.admin:
+    default: op

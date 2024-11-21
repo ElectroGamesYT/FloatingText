@@ -1,14 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace ElectroGames\FloatingText;
+namespace skyss0fly\FloatingText;
 
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use pocketmine\math\Vector3;
+use pocketmine\world\WorldManager;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat as TF;
-use pocketmine\level\particle\FloatingTextParticle;
+use pocketmine\world\particle\FloatingTextParticle;
 
 class Main extends PluginBase {
 
